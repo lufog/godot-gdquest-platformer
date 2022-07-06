@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Actor
 
 
-@export var speed := Vector2(400.0, 400.0)
+@export var speed := Vector2(300.0, 400.0)
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 

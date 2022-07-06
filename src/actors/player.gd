@@ -1,6 +1,8 @@
 extends Actor
 
 
+@onready var stomp_detector: Area2D = $StompDetector
+
 
 func _physics_process(delta: float) -> void:
 	var input_direction := Input.get_axis("move_left", "move_right")
@@ -19,26 +21,12 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 
 
-#const SPEED = 300.0
-#const JUMP_VELOCITY = -400.0
-#
-## Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-#
-#
-#
-#func _physics_process(delta: float) -> void:
-#	
-#
-#	# Handle Jump.
-#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#		velocity.y = JUMP_VELOCITY
-#
-#	# Get the input direction and handle the movement/deceleration.
-#	# As good practice, you should replace UI actions with custom gameplay actions.
-#	var direction := Input.get_axis("ui_left", "ui_right")
-#	if direction:
-#		velocity.x = direction * SPEED
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-#	move_and_slide()
+func _on_stomp_detector_area_entered(area: Area2D) -> void:
+	if stomp_detector.global_position.y > area.global_position.y:
+		return
+	
+	velocity.y = -speed.y * 0.8
+
+
+func _on_enemy_detector_body_entered(_body: Node2D) -> void:
+	queue_free()
