@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmhxl37yaus5j"]
+[gd_scene load_steps=7 format=3 uid="uid://dmhxl37yaus5j"]
 
 [ext_resource type="Texture2D" uid="uid://5b78ig1gwkd" path="res://assets/player.png" id="1_20stp"]
 [ext_resource type="Script" path="res://src/actors/player.gd" id="1_nltio"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ud50e"]
+closed = false
+polygon = PackedVector2Array(-33, -97, 33, -97, 40, -94, 46, -88, 49, -80, 49, -15, 45, -8, 41, -4, 35, 0, -33, 0, -38, -2, -43, -6, -46, -11, -49, -16, -49, -82, -45, -88, -40, -93, -33, -97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8xpg"]
 size = Vector2(80, 80)
@@ -16,11 +20,15 @@ size = Vector2(86, 14)
 collision_mask = 8
 floor_snap_length = 8.0
 script = ExtResource("1_nltio")
-speed = Vector2(400, 500)
+speed = Vector2(400, 600)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_20stp")
 offset = Vector2(0, -48)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+show_behind_parent = true
+occluder = SubResource("OccluderPolygon2D_ud50e")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -40)
