@@ -1,10 +1,6 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
+[gd_resource type="Font" load_steps=2 format=3 uid="uid://c6duw2a1a7caw"]
 
-[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=1]
-
+[ext_resource type="FontData" uid="uid://c1l3iytb3edng" path="res://assets/montserrat_extrabold.otf" id="1"]
 
 [resource]
-size = 24
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
+data/0 = ExtResource("1")

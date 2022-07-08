@@ -29,4 +29,12 @@ func _on_stomp_detector_area_entered(area: Area2D) -> void:
 
 
 func _on_enemy_detector_body_entered(_body: Node2D) -> void:
+	_die()
+
+
+func _die() -> void:
+	if is_queued_for_deletion():
+		return
+	
+	PlayerData.deaths += 1
 	queue_free()

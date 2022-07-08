@@ -18,6 +18,7 @@ size = Vector2(86, 14)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 8
+floor_constant_speed = true
 floor_snap_length = 8.0
 script = ExtResource("1_nltio")
 speed = Vector2(400, 600)
