@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmhxl37yaus5j"]
+[gd_scene load_steps=5 format=3 uid="uid://dmhxl37yaus5j"]
 
 [ext_resource type="Texture2D" uid="uid://5b78ig1gwkd" path="res://assets/player.png" id="1_20stp"]
 [ext_resource type="Script" path="res://src/actors/player.gd" id="1_nltio"]
@@ -10,14 +10,8 @@ polygon = PackedVector2Array(-33, -97, 33, -97, 40, -94, 46, -88, 49, -80, 49, -
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8xpg"]
 size = Vector2(80, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_luxk5"]
-size = Vector2(86, 67)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvxkk"]
-size = Vector2(86, 14)
-
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 8
+collision_mask = 10
 floor_constant_speed = true
 floor_snap_length = 8.0
 script = ExtResource("1_nltio")
@@ -46,24 +40,3 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.0
 drag_right_margin = 0.0
-
-[node name="EnemyDetector" type="Area2D" parent="."]
-modulate = Color(0.0392157, 0, 1, 1)
-position = Vector2(0, -40)
-collision_mask = 2
-
-[node name="Collision" type="CollisionShape2D" parent="EnemyDetector"]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_luxk5")
-
-[node name="StompDetector" type="Area2D" parent="."]
-modulate = Color(0.0392157, 0, 1, 1)
-position = Vector2(0, -40)
-collision_mask = 10
-
-[node name="Collision" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2(0, 40)
-shape = SubResource("RectangleShape2D_hvxkk")
-
-[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
-[connection signal="area_entered" from="StompDetector" to="." method="_on_stomp_detector_area_entered"]
