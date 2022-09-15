@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdynbv6ietslw"]
+
+[ext_resource type="Script" path="res://src/ui/quit_button.gd" id="1_0uise"]
+
+[node name="QuitButton" type="Button"]
+offset_right = 42.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Quit"
+script = ExtResource("1_0uise")
+metadata/_edit_layout_mode = 1
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

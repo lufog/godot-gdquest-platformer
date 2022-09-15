@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://f4pvaq82q2es"]
+
+[ext_resource type="Texture2D" uid="uid://dwg3iqear4v44" path="res://assets/bumper.png" id="2_vhntb"]
+
+[node name="Bumper" type="Area2D"]
+collision_layer = 8
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vhntb")
+offset = Vector2(0, -39)
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -78, 15, -77, 36, -70, 48, -59, 54, -45, 54, -35, 49, -26, 34, -19, -35, -18, -49, -25, -54, -34, -54, -45, -48, -59, -34, -70, -16, -77)

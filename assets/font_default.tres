@@ -1,6 +1,8 @@
 [gd_resource type="Font" load_steps=2 format=3 uid="uid://c6duw2a1a7caw"]
 
-[ext_resource type="FontData" uid="uid://c1l3iytb3edng" path="res://assets/montserrat_extrabold.otf" id="1"]
+[ext_resource type="FontFile" uid="uid://c1l3iytb3edng" path="res://assets/montserrat_extrabold.otf" id="1"]
 
 [resource]
+resource_local_to_scene = false
+resource_name = ""
 data/0 = ExtResource("1")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://chbe6juc1vpn1"]
+
+[ext_resource type="Script" path="res://src/actors/enemy.gd" id="1_ss8cd"]
+[ext_resource type="Texture2D" uid="uid://b5b0s37k4qi2s" path="res://assets/enemy.png" id="2_5yt77"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwq6g"]
+radius = 37.0
+height = 106.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 9
+floor_constant_speed = true
+floor_snap_length = 8.0
+script = ExtResource("1_ss8cd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_5yt77")
+offset = Vector2(0, -47)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -38)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_mwq6g")
+
+[node name="VisibleEnabler" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -47.5)
+scale = Vector2(5.4, 4.65)

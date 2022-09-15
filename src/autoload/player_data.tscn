@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnb1eovu2p358"]
+
+[ext_resource type="Script" path="res://src/autoload/player_data.gd" id="1_0rur7"]
+
+[node name="PlayerData" type="Node"]
+script = ExtResource("1_0rur7")
